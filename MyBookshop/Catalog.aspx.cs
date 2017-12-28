@@ -20,8 +20,11 @@ namespace MyBookshop
         protected void LinkButton1_Command(object sender, CommandEventArgs e)
         {
             int bookId = Convert.ToInt32(e.CommandArgument);
-            Session["bookDetailId"] = bookId;
+            /*
+             * Session["bookDetailId"] = bookId;
             Response.Redirect("/BookDetails.aspx");
+            */
+            Response.Redirect("/BookDetails.aspx?bookId=" + bookId);
         }
 
         protected void ProductsDataPager_PreRender(object sender, EventArgs e)

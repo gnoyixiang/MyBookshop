@@ -17,14 +17,31 @@ namespace MyBookshop
         protected void Page_Load(object sender, EventArgs e)
         {
             bm = new BusinessModel();
-            if (Session["bookDetailId"] == null)
+            /*
+             * if (Session["bookDetailId"] == null)
             {
                 Response.Redirect("/404.aspx");
             }
+            
 
             bookId = (int)Session["bookDetailId"];
+            */
 
+            if (Request.QueryString["bookId"] == null)
+            {
+                bookId = 1;
+            }
+            else
+            {
+                bookId = int.Parse(Request.QueryString["bookId"]);
+            }
+                                  
             b = bm.getBook(bookId);
+
+            if (b == null)
+            {
+                Response.Redirect("404.aspx");
+            }
 
             lblTitle.Text = b.Title.ToString();
             lblAuthor.Text = b.Author.ToString();
@@ -120,7 +137,8 @@ namespace MyBookshop
 
         protected void linkPrevious_Command(object sender, CommandEventArgs e)
         {
-            int prevBookID = (int)Session["bookDetailId"] - 1;
+            //int prevBookID = (int)Session["bookDetailId"] - 1;
+            int prevBookID = bookId - 1;
             while (true)
             {
                 if (prevBookID < 1) return;
@@ -128,13 +146,14 @@ namespace MyBookshop
                 if (b != null) break;
                 prevBookID--;
             }            
-            Session["bookDetailId"] = prevBookID;
-            Response.Redirect("/BookDetails.aspx");
+            //Session["bookDetailId"] = prevBookID;
+            Response.Redirect("/BookDetails.aspx?bookId=" + prevBookID);
         }
 
         protected void linkNext_Command(object sender, CommandEventArgs e)
         {
-            int nextBookID = (int)Session["bookDetailId"] + 1;
+            //int nextBookID = (int)Session["bookDetailId"] + 1;
+            int nextBookID = bookId + 1;
             int total = bm.getCount();
             while (true)
             {
@@ -143,8 +162,8 @@ namespace MyBookshop
                 if (b != null) break;
                 nextBookID++;
             }
-            Session["bookDetailId"] = nextBookID;
-            Response.Redirect("/BookDetails.aspx");
+            //Session["bookDetailId"] = nextBookID;
+            Response.Redirect("/BookDetails.aspx?bookId=" + nextBookID);
         }
 
         protected void btnEdit_Click(object sender, EventArgs e)
