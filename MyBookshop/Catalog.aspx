@@ -3,8 +3,24 @@
 
     <h1>Books Catalog</h1>
     <br />
+
+        <asp:DataPager runat="server" ID="DataPager2" 
+        PagedControlID="ListView1" PageSize="8" OnPreRender="ProductsDataPager_PreRender"
+        >
+        <Fields>
+          <asp:NextPreviousPagerField ButtonType="Link"
+            ShowFirstPageButton="true"
+            ShowNextPageButton="false" 
+            ShowPreviousPageButton="true" />
+          <asp:NumericPagerField ButtonCount="3" />
+          <asp:NextPreviousPagerField ButtonType="Link"
+            ShowLastPageButton="true"
+            ShowNextPageButton="true" 
+            ShowPreviousPageButton="false" />
+        </Fields>
+    </asp:DataPager>
     
-    <asp:ListView ID="ListView1" runat="server" GroupItemCount="3">
+    <asp:ListView ID="ListView1" runat="server" GroupItemCount="4">
         <LayoutTemplate>
             <table style="width:100%;" >
                 <tr id="groupPlaceholder" runat="server">
@@ -12,7 +28,7 @@
             </table>
         </LayoutTemplate>  
         <GroupTemplate>
-            <tr runat="server" id="bookList">
+            <tr runat="server">
                 <td runat="server" id="itemPlaceholder"></td>
             </tr>
         </GroupTemplate>     
@@ -30,5 +46,20 @@
         </ItemTemplate>
     </asp:ListView>    
 
+    <asp:DataPager runat="server" ID="ProductsDataPager" 
+        PagedControlID="ListView1" PageSize="8" OnPreRender="ProductsDataPager_PreRender"
+        >
+        <Fields>
+          <asp:NextPreviousPagerField ButtonType="Link"
+            ShowFirstPageButton="true"
+            ShowNextPageButton="false" 
+            ShowPreviousPageButton="true" />
+          <asp:NumericPagerField ButtonCount="3" />
+          <asp:NextPreviousPagerField ButtonType="Link"
+            ShowLastPageButton="true"
+            ShowNextPageButton="true" 
+            ShowPreviousPageButton="false" />
+        </Fields>
+    </asp:DataPager>
 
 </asp:Content>

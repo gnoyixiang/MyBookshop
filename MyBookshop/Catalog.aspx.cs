@@ -23,5 +23,11 @@ namespace MyBookshop
             Session["bookDetailId"] = bookId;
             Response.Redirect("/BookDetails.aspx");
         }
+
+        protected void ProductsDataPager_PreRender(object sender, EventArgs e)
+        {
+            ListView1.DataSource = bm.getAll();
+            ListView1.DataBind();
+        }
     }
 }

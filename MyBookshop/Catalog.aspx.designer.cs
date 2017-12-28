@@ -13,6 +13,15 @@ namespace MyBookshop {
     public partial class Catalog {
         
         /// <summary>
+        /// DataPager2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DataPager DataPager2;
+        
+        /// <summary>
         /// ListView1 control.
         /// </summary>
         /// <remarks>
@@ -20,5 +29,14 @@ namespace MyBookshop {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ListView ListView1;
+        
+        /// <summary>
+        /// ProductsDataPager control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DataPager ProductsDataPager;
     }
 }
