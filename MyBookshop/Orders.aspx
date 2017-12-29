@@ -10,10 +10,13 @@
         .top{
             margin-top:30px;
         }
+        .ddl{
+            margin:30px 0;
+        }
     </style>
     <div class="top" />
     <div class="container"> 
-        <div><asp:DropDownList ID="ddlUsers" runat="server" Visible="false" AutoPostBack="true"></asp:DropDownList>   </div>
+        <div class="ddl">Users: <asp:DropDownList ID="ddlUsers" runat="server" Visible="false" AutoPostBack="true"></asp:DropDownList>   </div>
                   
      <asp:ListView ID="OrderListView" runat="server" OnItemDataBound="OrderListView_ItemDataBound">
             <LayoutTemplate>

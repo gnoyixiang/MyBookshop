@@ -7,6 +7,7 @@ namespace MyBookshop.Models
     using System.Data.Entity.Spatial;
 
     [Table("Book")]
+    [Serializable]
     public partial class Book
     {
         public int BookID { get; set; }

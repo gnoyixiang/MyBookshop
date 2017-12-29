@@ -1,7 +1,19 @@
 ﻿<%@ Page Title="WYX Bookshop" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="login.aspx.cs" Inherits="MyBookshop.Login" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <style>
+        h1{
+            margin:30px 10px;
+        }
+        td{
+            padding:10px 10px;
+        }
+        .rbt{
+            padding:0 20px 0 0;
+        }
+    </style>
+
     <div>
-       
+     <h1>Login</h1>   
     <table>
         <tr>
             <td><asp:Label ID="lblUsername" runat="server" Text="Username"></asp:Label></td>

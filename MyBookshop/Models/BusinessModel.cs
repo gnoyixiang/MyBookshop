@@ -24,6 +24,30 @@ namespace MyBookshop.Models
             }
         }
 
+        public List<Book> searchBook(string searchText, string type)
+        {
+            using (BookshopEntities bs = new BookshopEntities())
+            {
+                if (type == "Title")
+                {
+                    return bs.Books.Where(b=>b.Title.ToUpper().Contains(searchText.Trim().ToUpper())).ToList();
+                }
+                if (type == "Author")
+                {
+                    return bs.Books.Where(b => b.Author.ToUpper().Contains(searchText.Trim().ToUpper())).ToList();
+                }
+                return bs.Books.ToList();
+            }
+        }
+
+        public List<Book> searchBookByCategory(int categoryID)
+        {
+            using (BookshopEntities bs = new BookshopEntities())
+            {
+               return bs.Books.Where(b=>b.CategoryID==categoryID).ToList();
+            }
+        }
+
         public int getCount()
         {
             using (BookshopEntities bs = new BookshopEntities())
@@ -53,6 +77,14 @@ namespace MyBookshop.Models
             using (BookshopEntities bs = new BookshopEntities())
             {
                 return bs.Categories.Where(c => c.CategoryID == catID).First().Name.ToString();
+            }
+        }
+
+        public List<Category> getAllCategory()
+        {
+            using (BookshopEntities bs = new BookshopEntities())
+            {
+                return bs.Categories.ToList();
             }
         }
 
