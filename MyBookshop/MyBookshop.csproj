@@ -270,6 +270,7 @@
     <Content Include="index.aspx" />
     <Content Include="login.aspx" />
     <Content Include="Orders.aspx" />
+    <Content Include="Readme.txt" />
     <Content Include="register.aspx" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
@@ -306,6 +307,7 @@
     <Content Include="Global.asax" />
     <Content Include="Service1.svc" />
     <Content Include="Site.Master" />
+    <Content Include="sql\bookshop_script.sql" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>

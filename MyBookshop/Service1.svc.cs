@@ -32,5 +32,10 @@ namespace MyBookshop
             book.Discount = b.Discount;
             bm.updateBook(book);
         }
+
+        public List<User> GetUsers()
+        {
+            return new UserContext().getAllUsers();
+        }
     }
 }

@@ -26,6 +26,10 @@ namespace MyBookshop
         RequestFormat = WebMessageFormat.Json,
         ResponseFormat = WebMessageFormat.Json)]
         void Update(Book book);
+
+        [OperationContract]
+        [WebGet(UriTemplate = "/Users", ResponseFormat = WebMessageFormat.Json)]
+        List<User> GetUsers();
     }
 
     [DataContract]

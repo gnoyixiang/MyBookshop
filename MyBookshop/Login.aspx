@@ -1,9 +1,7 @@
 ﻿<%@ Page Title="WYX Bookshop" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="login.aspx.cs" Inherits="MyBookshop.Login" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div>
-    
-    <input type="text" id="txtbox" runat="server">
-    
+       
     <table>
         <tr>
             <td><asp:Label ID="lblUsername" runat="server" Text="Username"></asp:Label></td>
